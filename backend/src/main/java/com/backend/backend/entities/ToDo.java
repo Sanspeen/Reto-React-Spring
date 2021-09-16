@@ -1,17 +1,19 @@
 package com.backend.backend.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="task")
 public class ToDo {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private boolean completed;
     private String groupListId;
+
+    public ToDo() {
+    }
 
     public String getGroupListId() {
         return groupListId;
