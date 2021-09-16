@@ -12,7 +12,7 @@ public class ToDoController {
     @Autowired
     private ToDoServicesInterface service;
 
-    @GetMapping(value = "/list")
+    @GetMapping(value = "/todosList")
     public Iterable<ToDo> list(){
         try {
             return service.list();
@@ -22,18 +22,18 @@ public class ToDoController {
         }
     }
 
-    @PostMapping(value = "/save")
+    @PostMapping(value = "/todoGuardar")
     public ToDo saveUser(@RequestBody ToDo toDo){
         return service.save(toDo);
     }
 
-    @PostMapping(value = "/update")
+    @PostMapping(value = "/todoActualizar")
     public ToDo updateToDo(@RequestBody ToDo toDo){
         return service.update(toDo);
     }
 
     //Eliminar por ID
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping(path = "/{id}/todo")
     public void deleteByID(@PathVariable("id") int id){
         service.delete(id);
     }

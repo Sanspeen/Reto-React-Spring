@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ToDoRepositoryInterface extends CrudRepository <ToDo, Integer> {
+public interface ToDoRepositoryInterface extends CrudRepository <ToDo, Long> {
 }
