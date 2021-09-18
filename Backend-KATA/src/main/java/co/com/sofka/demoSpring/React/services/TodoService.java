@@ -1,7 +1,8 @@
 package co.com.sofka.demoSpring.React.services;
 
 import co.com.sofka.demoSpring.React.entities.Todo;
-import co.com.sofka.demoSpring.React.repository.TodoRepository;
+import co.com.sofka.demoSpring.React.mapper.TodoMapper;
+import co.com.sofka.demoSpring.React.repository.ITodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,12 @@ import org.springframework.stereotype.Service;
 public class TodoService {
 
     @Autowired
-    private TodoRepository repository; //Llamamos al repositorio.
+    private ITodoRepository repository; //Llamamos al repositorio.
+
+
+    @Autowired
+    private TodoMapper taskListMapper;
+
 
     //Esta funcion lo que hará es que nos devolvera una lista iterada de los objetos que hayamos registrado en la base de datos
     public Iterable<Todo> list(){

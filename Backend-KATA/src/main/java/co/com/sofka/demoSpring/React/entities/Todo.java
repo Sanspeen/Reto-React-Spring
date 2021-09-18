@@ -5,18 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity //Entidad
-@Table(name = "tasks") //Creara la tabla o insertara en ella.
+@Entity
+@Table(name = "tasks")
 
-public class Todo {  //Clase que almacenará la entidad To Do
+public class Todo {
 
-    @Id //Determina la variable Id como un identificador.
-    @GeneratedValue //Genera el valor para el ID automaticamente en caso tal de que no se lo den.
-    private long id; //El ID será el valor identificador de este objeto.
-    private String name; //Variable para el nombre de la tarea.
-    private boolean isCompleted = false; //Este booleano va a determinar si ya se hizo la terea o si aun no.
+    @Id
+    @GeneratedValue
+    private long id;
+    private long idCategory;
+    private String name;
+    private boolean isCompleted = false;
 
-    //Getters y Setters para acceder a la informacion de este objeto.
     public long getId() {
         return id;
     }
@@ -39,5 +39,13 @@ public class Todo {  //Clase que almacenará la entidad To Do
 
     public void setCompleted(boolean completed) {
         isCompleted = completed;
+    }
+
+    public long getIdCategory() {
+        return idCategory;
+    }
+
+    public void setIdCategory(long idCategory) {
+        this.idCategory = idCategory;
     }
 }
