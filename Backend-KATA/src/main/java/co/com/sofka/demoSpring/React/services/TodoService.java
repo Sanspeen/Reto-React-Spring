@@ -10,32 +10,29 @@ import org.springframework.stereotype.Service;
 public class TodoService {
 
     @Autowired
-    private ITodoRepository repository; //Llamamos al repositorio.
+    private ITodoRepository repository;
 
 
     @Autowired
     private TodoMapper taskListMapper;
 
 
-    //Esta funcion lo que hará es que nos devolvera una lista iterada de los objetos que hayamos registrado en la base de datos
     public Iterable<Todo> list(){
-        return repository.findAll(); //El metodo .findAll(); lo sacamos de el repositorio que tomo los metodos del Crud y este nos permite buscar a todos los elementos de la DB y retornarlos en la lista iterada.
+        return repository.findAll();
 
     }
 
-    //Este metodo nos permite guardar los datos del objeto en la base de datos recibiendo el objeto por parametro.
     public Todo save(Todo todo){
-        return repository.save(todo); //El metodo save tambien es una herencia de CrudRepository desde repository.
+        return repository.save(todo);
     }
 
-    //Valida que si obtenga el id antes de eliminarlo y si no lo obtiene arroja una excepcion.
     public Todo get(long id){
-        return repository.findById(id).orElseThrow(); //El orElseThrow arroja la excepcion.
+        return repository.findById(id).orElseThrow();
     }
 
-    //Borra algun elemento de nuestra DB mediante la validacion del get.
+
     public void delete(long id){
-        repository.delete(get(id)); //Toma el id desde el get(id) de la linea 26 para validar que este si exista y lo elimina si este existe.
+        repository.delete(get(id));
     }
 
 }
