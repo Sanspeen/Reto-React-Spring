@@ -3,12 +3,12 @@ package co.com.sofka.demoSpring.React.repository;
 import co.com.sofka.demoSpring.React.entities.Todo;
 import co.com.sofka.demoSpring.React.mapper.TodoMapper;
 import co.com.sofka.demoSpring.React.model.TodoDTO;
-import co.com.sofka.demoSpring.React.services.ITodoService;
+import co.com.sofka.demoSpring.React.services.ITodoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class Todorepository implements ITodoService {
+public class Todorepository implements ITodoServices {
 
     @Autowired
     private ITodoRepository data;

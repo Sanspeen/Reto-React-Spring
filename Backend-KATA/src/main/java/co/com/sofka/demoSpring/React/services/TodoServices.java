@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service //Etiqueta que nos denomina a el servicio hacia el sistema.
-public class TodoService {
+public class TodoServices {
 
     @Autowired
     private ITodoRepository repository;

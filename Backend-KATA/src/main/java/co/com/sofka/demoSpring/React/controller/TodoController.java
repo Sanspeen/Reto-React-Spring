@@ -1,5 +1,5 @@
 package co.com.sofka.demoSpring.React.controller;
-import co.com.sofka.demoSpring.React.services.TodoService;
+import co.com.sofka.demoSpring.React.services.TodoServices;
 import co.com.sofka.demoSpring.React.entities.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class TodoController {
 
     @Autowired
-    private TodoService service;
+    private TodoServices service;
 
 
     @GetMapping(value = "api/todos")

@@ -2,7 +2,7 @@ package co.com.sofka.demoSpring.React.services;
 
 import co.com.sofka.demoSpring.React.model.TodoDTO;
 
-public interface ITodoService {
+public interface ITodoServices {
 
     public Iterable<TodoDTO> list();
     public TodoDTO save(TodoDTO todoDTO);
